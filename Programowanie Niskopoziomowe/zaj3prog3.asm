@@ -1,7 +1,8 @@
 %include "asm64_io.inc"
 
 segment .data
-lic dw 0x0
+lic dd 0x0
+stack db 0x0, 0x0, 0x0, 0x0, 0x0
 
 segment .text
 global asm_main 
@@ -14,7 +15,7 @@ call read_char
 cmp al, 0x0A
 je get_no_1_p
 sub eax, 0x30
-push rax
+mov [stack + edi], al
 inc edi
 cmp edi, 0x5
 jne read_loop_1
@@ -22,11 +23,11 @@ call read_char
 
 get_no_1_p:
 xor ecx, ecx
-xor esi, esi
 mov eax, 0x1
 get_no_1:
+sub edi, 0x1
 xor edx, edx
-pop rbx
+mov bl, [stack + edi]
 mov dl, bl
 mov ebx, eax
 mul edx
@@ -34,8 +35,7 @@ add ecx, eax
 mov eax, ebx
 mov ebx, 0xA
 mul ebx
-inc esi
-cmp esi, edi
+cmp edi, 0x0
 jne get_no_1
 
 mov [lic], ecx
@@ -51,7 +51,7 @@ call read_char
 cmp al, 0x0A
 je get_no_2_p
 sub eax, 0x30
-push rax
+mov [stack + edi], al
 inc edi
 cmp edi, 0x5
 jne read_loop_2
@@ -63,7 +63,8 @@ xor esi, esi
 mov eax, 0x1
 get_no_2:
 xor edx, edx
-pop rbx
+sub edi, 0x1
+mov bl, [stack + edi]
 mov dl, bl
 mov ebx, eax
 mul edx
@@ -72,7 +73,7 @@ mov eax, ebx
 mov ebx, 0xA
 mul ebx
 inc esi
-cmp esi, edi
+cmp edi, 0x0
 jne get_no_2
 
 wypisz:

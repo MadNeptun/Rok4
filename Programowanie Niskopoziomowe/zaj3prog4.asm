@@ -6,7 +6,7 @@ s2 db 'z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k','j','i','h
 current db 0x0
 
 segment .bss
-tab times 100 dw
+tab times 100 db
 
 segment .text
 global asm_main 
@@ -27,15 +27,10 @@ je wypisz
 mov [current], al
 
 offset_loop:
-mov eax, esi
-mov ebx, s1
-mov edx, s2
-add ebx, eax
-add edx, eax
 mov cl, [current]
-cmp [ebx], cl
+cmp [s1 + esi], cl
 jne end_prep
-mov bl, [edx]
+mov bl, [s2 + esi]
 mov [current], bl
 jmp wstaw
 end_prep:
@@ -45,12 +40,8 @@ inc esi
 jmp offset_loop
 
 wstaw:
-mov eax, edi
-mov ecx, 4
-mul ecx
-add eax, tab
 mov ebx, [current]
-mov [eax], ebx
+mov [tab + edi], ebx
 inc edi
 cmp edi, 0x63
 jne read_loop
@@ -63,12 +54,7 @@ xor ecx, ecx
 xor edx, edx
 
 wypisz_loop:
-mov eax, esi
-mov ecx, 4
-mul ecx
-mov ebx, eax
-add ebx, tab
-mov eax, [ebx]
+mov eax, [tab + esi]
 call print_char
 inc esi
 cmp esi, edi
