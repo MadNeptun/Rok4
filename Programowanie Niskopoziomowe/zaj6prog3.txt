@@ -1,0 +1,17 @@
+(gdb) break stop
+(gdb) run
+(gdb) ni
+(gdb) ni
+(gdb) ni
+(gdb) ni 
+(gdb) set $ecx = 0x80490a0
+(gdb) set variable *0x80490a0 = 0x46
+(gdb) set variable *0x80490a1 = 0x41
+(gdb) set variable *0x80490a2 = 0x49
+(gdb) set variable *0x80490a3 = 0x4C
+(gdb) set variable *0x80490a4 = 0x21
+(gdb) set variable *0x80490a5 = 0xA
+(gdb) set $edx = 0x6
+(gdb) ni
+(gdb) ni 
+(gdb) ni 

@@ -1,0 +1,10 @@
+(gdb) break stop
+(gdb) run
+(gdb) ni
+(gdb) ni
+(gdb) ni
+(gdb) ni 
+(gdb) set $ecx=0x80490a0
+(gdb) ni
+(gdb) ni 
+(gdb) ni 
