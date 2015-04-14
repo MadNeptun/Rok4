@@ -1,0 +1,19 @@
+
+w funkcji _Z5checkPKc
+należy zmodyfikować wartość pod adresem ebp-4
+0x08048eff <+43>:	cmpl   $0x2ad,-0x4(%ebp)
+tak aby zawierała 0x2ad
+
+TOP SECRET
+----------
+Puk puk.
+- Kto tam?
+(długa cisza)
+- Java.
+
+Puk puk.
+- Kto tam?
+- C++.
+
+Puk puk.
+- Assembler.
