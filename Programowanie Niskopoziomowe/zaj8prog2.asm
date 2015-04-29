@@ -8,9 +8,7 @@ cld
 mov eax, 0x0
 mov ecx, [ebp+12]   
 mov edi, [ebp+8]
-petla2:
-stosd
-loop petla2
+rep stosd
 leave
 ret
 _Z6kopiujPiS_j:
@@ -19,8 +17,6 @@ cld
 mov ecx, [ebp+16] 
 mov esi, [ebp+12]   
 mov edi, [ebp+8]
-petla: 
-movsd
-loop petla
+rep movsd
 leave
 ret
