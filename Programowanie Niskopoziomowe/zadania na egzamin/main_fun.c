@@ -10,3 +10,6 @@ int main(){                      //( 3)
   printf("\n%d\n", wynik);       //(10) wypisanie wyniku funkcji
 }                                //(11)
 
+// wynik
+// 4 2 16
+// 2

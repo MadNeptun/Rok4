@@ -10,3 +10,7 @@ int main(){                               //( 3)
   printf("%d\n", a);                      //(10) zakładam że sprawdzenie czy coś się nie zmieniło w pamięci
 }                                         //(11)
 
+// wynik:
+// 21 5
+// 20
+// 1

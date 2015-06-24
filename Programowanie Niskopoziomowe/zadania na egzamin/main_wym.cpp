@@ -16,4 +16,10 @@ int main() {                                      //( 7)
   printf("[%s]\n", txt);                          //(16) wypisanie łańcucha znaków
   return 0;                                       //(17)
 }                                                 //(18)
+// wynik
+// [AAAAAAAAAAAAAAAA7890]
+// 16 0
+// [*O***ST*T*KST*PRobny]
+// a z odkomentowaną linią 15 ostatni napis to [################obny] 
+// sama linia 15 daje wynik [#p#k#tu#u#ltu#qsobny]
 

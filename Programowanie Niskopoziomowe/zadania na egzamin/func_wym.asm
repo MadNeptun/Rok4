@@ -18,8 +18,8 @@ _wypelnij:                                                     ;( 6)
     jnz .loop1                                                 ;(18) skok jeśli rdx nie równa się 0
     mov rcx, 2                                                 ;(19)
 .loop2:                                                        ;(20)
-    dec rcx                                                    ;(21)
-    mov [rsi + rcx * 8], rax                                   ;(22) --
+    dec rcx                                                    ;(21) --
+    mov [rsi + rcx * 8], rax                                   ;(22)
     jnz .loop2                                                 ;(23) skok jeśli rcx nie równa się 0
     pop rcx                                                    ;(24)
     ret                                                        ;(25) *** funkcja wypelnij koniec
