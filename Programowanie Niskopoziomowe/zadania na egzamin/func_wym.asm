@@ -7,7 +7,7 @@ _wypelnij:                                                     ;( 6)
     push rcx                                                   ;( 7)
     xor rax, rax                                               ;( 8)
     mov al, dil                                                ;( 9) This is enforced by changing (AH, BH, CH, DH) to (BPL, SPL, DIL, SIL) for instructions using a REX prefix. Cytat ze strony Intela
-    mov rdx, 3                                                 ;(10)
+    mov rdx, 3                                                 ;(10) według wykładu DIL to 8 młodszych bitów rdi
     mov cl, 8                                                  ;(11)
 .loop1:                                                        ;(12)
     mov r9, rax                                                ;(13)
